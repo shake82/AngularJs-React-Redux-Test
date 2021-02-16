@@ -1,6 +1,7 @@
-import React, { PropTypes } from 'react';
+import React  from 'react';
 import Comment from '../Comment';
 import { getAngularService } from '../../services/AngularReactHelper';
+import PropTypes from 'prop-types'
 
 const CommentList = (props) => {
     const AuthorService = getAngularService(document, 'AuthorService');

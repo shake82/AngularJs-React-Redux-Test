@@ -1,3 +1,5 @@
+import data from './mock-data';
+
 const AUTHOR_URI = 'http://localhost:3004/authors'
 
 export default class AuthorService {
@@ -9,9 +11,10 @@ export default class AuthorService {
     }
 
     queryAuthors() {
-        return this.$http
-            .get(AUTHOR_URI)
-            .then((resp) => this.setAuthors(resp.data));
+        // return this.$http
+        //     .get(AUTHOR_URI)
+        //     .then((resp) => this.setAuthors(resp.data));
+        return Promise.resolve(data.authors).then((data) => this.setAuthors(data));
     }
 
     setAuthors(authors) {
